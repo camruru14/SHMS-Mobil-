@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Añadir Evento</title>
+<link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="IMG/logo.png" alt="Logo" class="logo">
+      <h1>RICALDONE</h1>
+      <div class="menu-icon">&#9776;</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Añadir eventos de la Comision</h2>
+
+      <form id="event-form">
+        <label for="nombre">Nombre del Evento:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="fecha">Fecha del Evento:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="descripcion">Descripcion del Evento:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+        <button type="submit">Agregar evento</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Creado por los Estudiantes de Segundo año de Desarrollo de Software</p>
+  </footer>
+
+  <script src="JS/script.js"></script>
+</body>
+</html>
