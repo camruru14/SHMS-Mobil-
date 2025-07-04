@@ -223,7 +223,7 @@ header {
 }
 
 body.dashboard-coordinador {
-    background-color: #616060 !important; /* Gris oscuro */
+    background-color: #9b9696 !important; /* Gris oscuro */
     min-height: 100vh;
 }
 
@@ -239,8 +239,8 @@ body.dashboard-coordinador {
 }
 
 .dashboard-coordinador .btn-primary {
-    background-color: #e0e0e0 !important; /* Gris claro */
-    border: 2px solid #ff6d00 !important; /* Naranja fuerte */
+    background-color: #ffffff !important; /* Gris claro */
+    border: 3px solid hsl(236, 75%, 70%) !important; /* Naranja fuerte */
     color: #333 !important;
     font-weight: bold;
 }
@@ -289,7 +289,7 @@ body.dashboard-estudiante {
 
 /* Color para el texto "Porcentaje" */
 .percentage-text {
-    color: #2c7be5 !important; /* Mismo color que el porcentaje */
+    color: #b4c7e0 !important; /* Mismo color que el porcentaje */
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 10px;
