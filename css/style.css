@@ -50,7 +50,7 @@ header {
     flex-direction: column;
     padding: 1.5rem;
     border-radius: 4px;
-    border: 2px solid rgb(245, 128, 33);
+    
 }
 
 .card-Body {
@@ -59,7 +59,7 @@ header {
     flex-direction: column;
     padding: 1.5rem;
     border-radius: 4px;
-    border: 2px solid rgb(79, 121, 236);
+    
 }
 
 .card img {
@@ -74,6 +74,7 @@ header {
     max-width: 250px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 45px;
 }
 
 /* Navbar items alignment */
@@ -119,15 +120,15 @@ header {
     min-height: 100vh;
     background: url("../img/Captura de pantalla 2025-06-12 120018.png") no-repeat center center fixed;
     background-size: cover;
-    background-color: #BDC2CF; /* Color de respaldo */
+    background-color: #CDD4E8; /* Color de respaldo */
 } 
 
 
 .wrapper {
     width: 420px;
-    background: gray;
+    background: #CDD4E8;
     color: #000000;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 30px 40px;
 } 
 
@@ -140,7 +141,7 @@ header {
     position: relative;
     width: 100%;
     height: 50px;
-    background: #BDC2CF;
+    background: #fafafa;
     margin: 30px 0;
     border-radius: 24px;
 } 
@@ -154,12 +155,12 @@ header {
     border: 2px solid rgb(255, 255, 255);
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
+    color: #000000;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder{
-    color: #fff;
+    color: #000000;
 }
 
 .input-box i{
@@ -183,7 +184,7 @@ header {
 }
 
 .remember-forgot a{
-    color: #fff;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -212,7 +213,7 @@ header {
 }
 
 .register-link p a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     font-weight: 600;
 }
@@ -334,4 +335,220 @@ body.dashboard-estudiante {
   font-size: 0.9rem;
   padding: 0.5rem 0.75rem;
   border-radius: 20px;
+}
+
+/* Estilos para el ícono de perfil */
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Ajustar alineación de elementos del navbar */
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+} 
+
+/* Semicírculo más grande y grueso */
+.progress-pie {
+    width: 180px;
+    height: 90px;
+    margin-bottom: 0.8rem !important;
+}
+
+.progress-pie-fill {
+    width: 100%;
+    height: 200%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(0, 180px, 180px, 0);
+}
+
+.progress-pie-fill.progress-fill-completed {
+    border: 20px solid #4fc3f7 !important; /* Más grueso y color celeste */
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+    transform: rotate(2126deg); /* Ajusta según el porcentaje (60% de 180° = 108°) */
+}
+
+/* Eliminar el semicírculo base */
+.progress-pie-fill:not(.progress-fill-completed) {
+    display: none;
+}
+
+/* Ajustes de texto */
+.percentage-text {
+    color: #000000 !important;
+    font-size: 2rem !important;
+    font-weight: bold;
+}
+
+.percentage-label {
+    color: #020202 !important;
+    font-size: 1.2rem !important;
+}
+
+/* Ajuste de espaciado */
+.card-Body {
+    padding: 1.5rem !important;
+} 
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px 8px 16px; /* Más padding a la derecha */
+  border: 2px solid #1976d2;
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primarys {
+  position: relative;
+  padding-right: 50px !important; /* Espacio para el círculo */
+  transition: all 0.3s ease;
+  border-radius: 45px;
+}
+
+/* Círculo morado */
+.btn-primary span {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover span {
+  background-color: #673ab7 !important; /* Morado más oscuro al hacer hover */
+}
+
+.aviso-card {
+ border-radius: 15px;
+ border: none;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ padding: 25px;
+ text-align: center;
+ background-color: white;
+ max-width: 350px;
+ margin: 0 auto;
+}
+
+.aviso-title {
+ font-weight: bold;
+ margin-bottom: 20px;
+ font-size: 1.25rem;
+ color: #333;
+}
+       
+.aviso-text {
+ margin-bottom: 25px;
+ line-height: 1.6;
+ color: #555;
+ font-size: 1rem;
+}
+
+.aviso-hora {
+ background-color: #f8f9fa;
+ color: #000;
+ padding: 8px 25px;
+ border-radius: 20px;
+ font-weight: bold;
+ display: inline-block;
+ border: 1px solid #dee2e6;
+ font-size: 1rem;
+}
+
+/* Ajustes para la tarjeta compacta */
+.compact-card {
+    width: 100%;
+    min-height: auto;
+    background-color: #BDC2CF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Asegurar que todas las tarjetas tengan el mismo ancho */
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 540px; /* Mismo ancho que las otras tarjetas */
+}
+
+/* Ajustes para el contenido interno */
+.inner-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-top: 10px;
+}
+
+.event-text {
+    flex-grow: 1;
+}
+
+.time-text {
+    white-space: nowrap;
+}
+.divider-line {
+ border-left: 1px solid #e0e0e0;
+ height: 40px;
+ margin: 0 12px;
+}
+
+
+.event-text h6 {
+ font-size: 0.95rem;
+ margin-bottom: 2px;
+ font-weight: 600;
+}
+
+.event-text p {
+ font-size: 0.85rem;
+ margin-bottom: 0;
+ color: #6c757d;
+} 
+
+.cardd-Bodyd {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 4px;
+    
+} 
+
+.cards {
+    width: 100%;
+    min-height: 150px;
+    background-color: #BDC2CF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
