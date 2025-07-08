@@ -17,17 +17,57 @@ function Login() {
  
     // Definir usuarios válidos con sus roles
     const usuariosValidos = [
+        // Credenciales de coordinadores
         { 
             email: "admin@institucion.edu", 
             password: "admin123",
             rol: "coordinador",
-            redirect: "DashboardC.html"
+            dashboard: "DashboardC.html"
         },
+        { 
+            email: "coordinador1@institucion.edu", 
+            password: "coor123",
+            rol: "coordinador",
+            dashboard: "DashboardC.html"
+        },
+        { 
+            email: "coordinador2@institucion.edu", 
+            password: "coor456",
+            rol: "coordinador",
+            dashboard: "DashboardC.html"
+        }, 
+
+        { 
+            email: "coordinador3@institucion.edu", 
+            password: "coor567",
+            rol: "coordinador",
+            dashboard: "DashboardC.html"
+        },
+        
+        // Credenciales de estudiantes
         { 
             email: "estudiante@institucion.edu", 
             password: "estudiante123",
             rol: "estudiante",
-            redirect: "DashboardE.html"
+            dashboard: "DashboardE.html"
+        },
+        { 
+            email: "alumno1@institucion.edu", 
+            password: "alumno123",
+            rol: "estudiante",
+            dashboard: "DashboardE.html"
+        },
+        { 
+            email: "alumno2@institucion.edu", 
+            password: "alumno456",
+            rol: "estudiante",
+            dashboard: "DashboardE.html"
+        },
+        { 
+            email: "alumno3@institucion.edu", 
+            password: "alumno789",
+            rol: "estudiante",
+            dashboard: "DashboardE.html"
         }
     ];
  
@@ -37,10 +77,22 @@ function Login() {
     );
  
     if (usuarioValido) {
-        // Redirigir según el rol del usuario
-        window.location.href = usuarioValido.redirect;
+        // Verificar si es la primera vez que el usuario inicia sesión
+        const firstLoginKey = `firstLogin_${email}`;
+        const isFirstLogin = localStorage.getItem(firstLoginKey) === null;
         
-        // Opcional: Guardar datos del usuario si marcó "Recordarme"
+        // Redirigir según corresponda
+        if (isFirstLogin) {
+            // Marcar que ya no es primera vez
+            localStorage.setItem(firstLoginKey, 'false');
+            // Redirigir a Comisiones.html (primera vez)
+            window.location.href = "Comisiones.html";
+        } else {
+            // Redirigir al dashboard correspondiente
+            window.location.href = usuarioValido.dashboard;
+        }
+        
+        // Guardar datos del usuario si marcó "Recordarme"
         if (document.querySelector('input[type="checkbox"]').checked) {
             sessionStorage.setItem('email', email);
             sessionStorage.setItem('rol', usuarioValido.rol);
@@ -50,7 +102,7 @@ function Login() {
     }
 }
  
-// Opcional: Cargar el email guardado cuando la página se carga
+// Cargar el email guardado cuando la página se carga
 document.addEventListener('DOMContentLoaded', function() {
     const savedEmail = sessionStorage.getItem('email');
     if (savedEmail) {
@@ -58,4 +110,3 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('input[type="checkbox"]').checked = true;
     }
 });
- 

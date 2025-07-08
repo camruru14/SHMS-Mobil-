@@ -62,3 +62,7 @@
         .active-card {
             display: block;
         }
+
+        a{
+            text-decoration: none;
+        }

@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+.header {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+.commission-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #6c757d;
+}
+.commission-name {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #6c757d;
+}
+.applicant-card {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 2px solid #000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.applicant-name {
+    font-weight: bold;
+    color: #495057;
+}
+.btn-action {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+.btn-action:hover {
+    background-color: #5a6268;
+    color: white;
+}
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+}
