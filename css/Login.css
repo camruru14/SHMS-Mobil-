@@ -171,7 +171,7 @@
             }
             
             .logo-container img {
-                width: 100px;
+                width: 80px;
             }
             
             .instruction-text {
@@ -181,4 +181,9 @@
             .credits {
                 font-size: 12px;
             }
+        }
+
+        .menu{
+            background-color: #ffffff;
+            max-width: 140px;
         }

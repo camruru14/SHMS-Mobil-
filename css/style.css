@@ -1,6 +1,6 @@
 .logo {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     top: 0;
     left: 0;
 }
@@ -20,12 +20,12 @@ header {
 
 /* Offcanvas styles */
 .offcanvas {
-    background-color: black !important;
+    background-color: rgb(238, 233, 233) !important;
     color: white;
 }
 
 .nav-link, .offcanvas-title {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 /* Card styles */
@@ -347,7 +347,7 @@ body.dashboard-estudiante {
     border-radius: 50%;
     background-color: #f0f0f0;
     overflow: hidden;
-    margin-left: 15px;
+    margin-left: 5px;
     transition: all 0.3s ease;
 }
 
