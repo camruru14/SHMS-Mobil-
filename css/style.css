@@ -552,3 +552,13 @@ body.dashboard-estudiante {
     flex-direction: column;
     margin-bottom: 15px;
 }
+
+@media (max-width: 991.98px) { /* Aplica estos estilos solo en pantallas de hasta 991.98px de ancho (típicamente tabletas y móviles) */
+    .offcanvas {
+        max-width: 80%; /* Establece el ancho máximo del menú al 80% del ancho de la pantalla. Puedes ajustarlo a, por ejemplo, 320px si quieres un ancho fijo. */
+        width: 100%; /* Asegura que ocupe el 100% del espacio disponible hasta el max-width */
+        /* Las siguientes dos líneas son importantes para asegurar que el menú se alinee a la derecha y no ocupe todo el ancho */
+        left: unset; /* Deshace cualquier posicionamiento 'left' por defecto de Bootstrap */
+        right: 0; /* Asegura que el menú se desplace desde el lado derecho de la pantalla */
+    }
+}

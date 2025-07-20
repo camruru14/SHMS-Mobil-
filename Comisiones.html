@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
     
     <title>Comisiones</title>
+     <div>
+                <div class="alert alert-danger alert-dismissible fade show Alerts" role="alert" id="Alert_Error_Proyects">
+                    <strong>¡ERROR AL CARGAR DATOS!</strong> <br> Hubieron problemas al cargar la informacion del perfil.
+                </div>
+            </div>
     <style>
         .comisiones-container {
             max-width: 800px;
@@ -31,18 +36,30 @@
         }
         
         .seguridad-btn {
-            background-color: #2c3e50;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+             border-style: solid;
+            border-width: 3px;
+            border-color: rgb(199, 45, 45);
+            border-radius: 25px;
         }
         
         .medioambiente-btn {
-            background-color: #2980b9;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 3px;
+            border-color: rgb(28, 160, 34);
+            border-radius: 24px;
         }
         
         .evangelizacion-btn {
-            background-color: #16a085;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+             border-style: solid;
+            border-width: 3px;
+             border-color: rgb(209, 131, 14);
+            border-radius: 24px;
         }
         
         .comision-card {
@@ -73,6 +90,7 @@
             display: block;
         }
     </style>
+   
     <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .icon {
@@ -191,5 +209,6 @@
     <script>
   lucide.createIcons();
     </script>
+    <script src="JS/scriptcomisiones.js"></script>
 </body>
 </html>
