@@ -38,45 +38,52 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
     
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        if (!validateForm()) return;
-        
-        // Obtener los valores del formulario
-        const nombre = document.getElementById('nombre').value.trim();
-        const apellido = document.getElementById('apellido').value.trim();
-        const carnet = document.getElementById('carnet').value.trim();
-        const ano = document.getElementById('ano').value.trim();
-        const especialidad = document.getElementById('especialidad').value.trim();
-        const seccion = document.getElementById('seccion').value.trim();
-        
-        // Crear objeto con los datos
-        const solicitud = {
-            nombreCompleto: `${nombre} ${apellido}`,
-            carnet: carnet,
-            ano: ano,
-            especialidad: especialidad,
-            seccion: seccion,
-            fechaSolicitud: new Date().toISOString()
-        };
-        
-        // Guardar en localStorage
-        let solicitudes = JSON.parse(localStorage.getItem('solicitudesComision')) || [];
-        
-        // Verificar si el carnet ya existe
-        if (solicitudes.some(s => s.carnet === carnet)) {
-            showNotification('Ya existe una solicitud con este carnet', false);
-            return;
-        }
-        
-        solicitudes.push(solicitud);
-        localStorage.setItem('solicitudesComision', JSON.stringify(solicitudes));
-        
-        // Mostrar mensaje de éxito
-        showNotification('Solicitud enviada correctamente', true);
-        
-        // Limpiar formulario
-        form.reset();
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (!validateForm()) return;
+    
+    // Obtener los valores del formulario
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellido = document.getElementById('apellido').value.trim();
+    const carnet = document.getElementById('carnet').value.trim();
+    const ano = document.getElementById('ano').value.trim();
+    const especialidad = document.getElementById('especialidad').value.trim();
+    const seccion = document.getElementById('seccion').value.trim();
+    
+    // Crear objeto con los datos
+    const solicitud = {
+        nombreCompleto: `${nombre} ${apellido}`,
+        carnet: carnet,
+        ano: ano,
+        especialidad: especialidad,
+        seccion: seccion,
+        fechaSolicitud: new Date().toISOString(),
+        estado: 'pendiente'
+    };
+    
+    // Guardar en localStorage
+    let solicitudes = JSON.parse(localStorage.getItem('solicitudesComision')) || [];
+    
+    // Verificar si el carnet ya existe
+    if (solicitudes.some(s => s.carnet === carnet)) {
+        showNotification('Ya existe una solicitud con este carnet', false);
+        return;
+    }
+    
+    solicitudes.push(solicitud);
+    localStorage.setItem('solicitudesComision', JSON.stringify(solicitudes));
+    localStorage.setItem('ultimoCarnetRegistrado', carnet);
+    
+    // Mostrar mensaje de éxito
+    showNotification('Solicitud enviada correctamente', true);
+    
+    // Limpiar formulario
+    form.reset();
+    
+    // Redirigir a la página de espera
+    setTimeout(() => {
+        window.location.href = 'Espera.html';
+    }, 1500);
     });
 });

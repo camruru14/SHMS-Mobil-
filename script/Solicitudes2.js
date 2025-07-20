@@ -88,26 +88,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Función para aceptar solicitud
-    function aceptarSolicitud(index) {
-        if (confirm(`¿Está seguro que desea aceptar a ${solicitudes[index].nombreCompleto}?`)) {
-            const estudianteAceptado = solicitudes[index];
-            estudianteAceptado.fechaAceptacion = new Date().toISOString();
-            
-            // Agregar a aceptados
-            aceptados.push(estudianteAceptado);
-            localStorage.setItem('estudiantesAceptados', JSON.stringify(aceptados));
-            
-            // Eliminar de solicitudes
-            solicitudes.splice(index, 1);
-            localStorage.setItem('solicitudesComision', JSON.stringify(solicitudes));
-            
-            // Mostrar notificación
-            showNotification(`Estudiante ${estudianteAceptado.nombreCompleto} aceptado`, true);
-            
-            // Actualizar vista
-            mostrarSolicitudes();
-        }
+function aceptarSolicitud(index) {
+    if (confirm(`¿Está seguro que desea aceptar a ${solicitudes[index].nombreCompleto}?`)) {
+        const estudianteAceptado = solicitudes[index];
+        estudianteAceptado.fechaAceptacion = new Date().toISOString();
+        estudianteAceptado.estado = 'aceptado';
+        
+        // Agregar a aceptados
+        aceptados.push(estudianteAceptado);
+        localStorage.setItem('estudiantesAceptados', JSON.stringify(aceptados));
+        
+        // Eliminar de solicitudes
+        solicitudes.splice(index, 1);
+        localStorage.setItem('solicitudesComision', JSON.stringify(solicitudes));
+        
+        // Mostrar notificación
+        showNotification(`Estudiante ${estudianteAceptado.nombreCompleto} aceptado`, true);
+        
+        // Actualizar vista
+        mostrarSolicitudes();
     }
+}
     
     // Función para rechazar solicitud
     function rechazarSolicitud(index) {

@@ -34,6 +34,12 @@
             background-color: #16a085;
             color: white;
         }
+
+
+        .expo-btn {
+            background-color: #5ca4f7;
+            color: white;
+        }
         
         .comision-card {
             display: none;
@@ -66,3 +72,18 @@
         a{
             text-decoration: none;
         }
+
+         .teatro-btn {
+          background-color: #8e44ad;
+          color: white;
+        }
+
+       .comunicaciones-btn {
+        background-color: #e74c3c;
+        color: white;
+        }
+
+        .expotec-btn {
+        background-color: #f39c12; 
+        color: white;
+}
