@@ -562,3 +562,71 @@ body.dashboard-estudiante {
         right: 0; /* Asegura que el menú se desplace desde el lado derecho de la pantalla */
     }
 }
+
+/*
+NAVBAR
+*/
+/* Estilos para el Offcanvas (Menú desplegable móvil) */
+.offcanvas-body .nav-link-custom {
+    display: flex; /* Para alinear icono y texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: flex-start; /* Alinear a la izquierda */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    padding: 10px 15px; /* Más padding para una mejor área de clic */
+    margin-bottom: 5px; /* Espacio entre botones */
+    border: none; /* Quitar bordes si los hay por defecto de .btn */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: transparent; /* Fondo transparente por defecto */
+    color: #212529; /* Color de texto predeterminado */
+    text-align: left; /* Asegurar que el texto se alinee a la izquierda */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.offcanvas-body .nav-link-custom:hover,
+.offcanvas-body .nav-link-custom:focus {
+    background-color: #e9ecef; /* Color de fondo al pasar el ratón/enfocar */
+    color: #0056b3; /* Un color de texto que contraste */
+    text-decoration: none; /* Eliminar subrayado si aplica */
+}
+
+.offcanvas-body .nav-link-custom svg {
+    width: 24px; /* Iconos más pequeños */
+    height: 24px;
+    margin-right: 10px; /* Espacio entre icono y texto */
+    color: #6c757d; /* Color por defecto para los iconos */
+}
+
+.offcanvas-body .nav-link-custom:hover svg,
+.offcanvas-body .nav-link-custom:focus svg {
+    color: #007bff; /* Cambia el color del icono al pasar el ratón/enfocar */
+}
+
+
+.offcanvas-body .nav-link-custom h4 {
+    font-size: 1rem; /* Texto más pequeño */
+    margin-bottom: 0; /* Eliminar margen inferior por defecto de h4 */
+    flex-grow: 1; /* Permite que el h4 ocupe el espacio restante */
+    color: inherit; /* Hereda el color del botón padre */
+}
+
+/* Ajuste para el logo si fuera necesario en móviles */
+@media (max-width: 991.98px) {
+    .navbar-brand img {
+        max-width: 150px; /* Tamaño del logo más pequeño en móviles */
+        height: auto;
+    }
+    .navbar-toggler {
+        /* Asegurar que el toggler tenga un buen tamaño en móviles */
+        padding: .25rem .75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid rgba(255,255,255,.1); /* Un borde sutil si lo quieres */
+        border-radius: .25rem;
+    }
+}
+
+/* Estilo para el icono de usuario si el color original es blanco */
+.nav-link svg[class*="lucide-user"] {
+    color: #ffffff; /* Asegura que el icono de usuario sea blanco */
+}

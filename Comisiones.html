@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <title>Comisiones</title>
-     <div>
-                <div class="alert alert-danger alert-dismissible fade show Alerts" role="alert" id="Alert_Error_Proyects">
-                    <strong>¡ERROR AL CARGAR DATOS!</strong> <br> Hubieron problemas al cargar la informacion del perfil.
-                </div>
-            </div>
+    <div>
+        <div class="alert alert-danger alert-dismissible fade show Alerts" role="alert" id="Alert_Error_Proyects">
+            <strong>¡ERROR AL CARGAR DATOS!</strong> <br> Hubieron problemas al cargar la informacion del perfil.
+        </div>
+    </div>
     <style>
         .comisiones-container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
         }
-        
+
         .comision-btn {
             width: 100%;
             margin-bottom: 15px;
@@ -29,21 +29,29 @@
             border-radius: 8px;
             transition: all 0.3s ease;
         }
-        
+
         .comision-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        
+
         .seguridad-btn {
             background-color: #ffffff;
             color: rgb(0, 0, 0);
-             border-style: solid;
+            border-style: solid;
             border-width: 3px;
             border-color: rgb(199, 45, 45);
             border-radius: 25px;
         }
-        
+        .comunicaciones-btn { /* No vi este botón en tu HTML, pero lo mantengo si lo usas en otro lugar */
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 3px;
+            border-color: rgb(76, 47, 207);
+            border-radius: 25px;
+        }
+
         .medioambiente-btn {
             background-color: #ffffff;
             color: rgb(0, 0, 0);
@@ -52,25 +60,26 @@
             border-color: rgb(28, 160, 34);
             border-radius: 24px;
         }
-        
+
         .evangelizacion-btn {
             background-color: #ffffff;
             color: rgb(0, 0, 0);
-             border-style: solid;
+            border-style: solid;
             border-width: 3px;
-             border-color: rgb(209, 131, 14);
+            border-color: rgb(209, 131, 14);
             border-radius: 24px;
         }
-        
+
         .comision-card {
-            display: none;
+            display: none; /* Por defecto oculto */
             margin-top: 20px;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             background-color: white;
+            position: relative; /* Importante para posicionar el botón de cierre */
         }
-        
+
         .inscripcion-btn {
             background-color: #5e35b1;
             color: white;
@@ -80,134 +89,162 @@
             margin-top: 15px;
             transition: all 0.3s ease;
         }
-        
+
         .inscripcion-btn:hover {
             background-color: #4527a0;
             transform: translateY(-2px);
         }
-        
+
         .active-card {
-            display: block;
+            display: block; /* Muestra la tarjeta activa */
+        }
+
+        /* Estilos para el botón de cierre */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: #333;
         }
     </style>
-   
+
     <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    .icon {
-      width: 60px;
-      height: 60px;
-      color: crimson;
-    }
-  </style>
+    <style>
+        .icon {
+            width: 60px;
+            height: 60px;
+            color: crimson;
+        }
+    </style>
 </head>
 <body>
+    <!--Inicio navbar-->
     <header>
-        <nav class="navbar navbar-expand-lg menu">
-            <div class="container-fluid">
-                <a class="navbar-brand me-auto" href="#">
-                    <img src="img/logooo.png" alt="Logo" width="220" height="60" style="padding-bottom: 10px; padding-top: 10px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title">Menú</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                    </div>
-                    <!--Barra de navegacion despegable-->
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <button type="button" class="btn"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .80rem;">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                             <h4>Inicio</h4>
-                            </button>
-                            <button type="button" class="btn"
-                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .80rem;">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><h4>
-                                Chat
-                             </h4>
-                            </button>
-                            <button type="button" class="btn"
-                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .80rem;">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days-icon lucide-calendar-days"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                            <h4>
-                                Calendario
-                            </h4>
-                            </button>
-                            <button type="button" class="btn"
-                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem;           --bs-btn-font-size: .75rem;">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-                            <h4>
-                                Comisión
-                            </h4>
-                            </button>
-                        </ul>
-                    </div>
+    <nav class="navbar navbar-expand-lg menu">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto" href="#">
+                <img src="img/logooo.png" alt="Logo" width="220" height="60" style="padding-bottom: 10px; padding-top: 10px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <a class="nav-link" href="#">
-                    <div style="padding-left: 7px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6875" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user">
-                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                </a>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li>
+                            <button type="button" class="btn nav-link-custom">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                <h4>Inicio</h4>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn nav-link-custom">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                                <h4>Chat</h4>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn nav-link-custom">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days-icon lucide-calendar-days"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                                <h4>Calendario</h4>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn nav-link-custom">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+                                <h4>Comisión</h4>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </nav>
-    </header>
+            <a class="nav-link" href="#">
+                <div style="padding-left: 7px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6875" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </nav>
+</header>
+  <!--Fin navbar-->
 
     <main class="container comisiones-container">
-        <!-- Botones de Comisiones -->
         <button class="comision-btn seguridad-btn" onclick="mostrarTarjeta('seguridad')">
             Comisión de Seguridad y Emergencia
         </button>
-        
+
         <div id="seguridad-card" class="comision-card">
+            <button class="close-btn" onclick="cerrarTarjeta('seguridad-card')">&times;</button>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit donec, arcu facilisis porttitor phasellus commodo mattis nunc a, purus aliquam varius facilisi cubilia vulputate molestie. Habitasse curabitur augue fermentum vehicula nunc dictum pharetra cubilia.</p>
             <button class="inscripcion-btn">Inscripción</button>
         </div>
-        
+
         <button class="comision-btn medioambiente-btn" onclick="mostrarTarjeta('medioambiente')">
             Comisión de Medio Ambiente
         </button>
-        
+
         <div id="medioambiente-card" class="comision-card">
+            <button class="close-btn" onclick="cerrarTarjeta('medioambiente-card')">&times;</button>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit donec, arcu facilisis porttitor phasellus commodo mattis nunc a, purus aliquam varius facilisi cubilia vulputate molestie. Habitasse curabitur augue fermentum vehicula nunc dictum pharetra cubilia.</p>
             <button class="inscripcion-btn">Inscripción</button>
         </div>
-        
+
         <button class="comision-btn evangelizacion-btn" onclick="mostrarTarjeta('evangelizacion')">
             Comisión de Evangelización
         </button>
-        
+
         <div id="evangelizacion-card" class="comision-card">
+            <button class="close-btn" onclick="cerrarTarjeta('evangelizacion-card')">&times;</button>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit donec, arcu facilisis porttitor phasellus commodo mattis nunc a, purus aliquam varius facilisi cubilia vulputate molestie. Habitasse curabitur augue fermentum vehicula nunc dictum pharetra cubilia.</p>
             <button class="inscripcion-btn">Inscripción</button>
         </div>
-        
+
         <div class="creditos text-center mt-4">
             <small>Creado por los Estudiantes de Segundo año de Desarrollo de Software</small>
         </div>
     </main>
 
     <script>
+        // Función para mostrar la tarjeta de comisión
         function mostrarTarjeta(comision) {
             // Oculta todas las tarjetas primero
             document.querySelectorAll('.comision-card').forEach(card => {
                 card.classList.remove('active-card');
             });
-            
+
             // Muestra solo la tarjeta seleccionada
             document.getElementById(`${comision}-card`).classList.add('active-card');
+        }
+
+        // Función para cerrar la tarjeta de comisión
+        function cerrarTarjeta(cardId) {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.classList.remove('active-card');
+            }
         }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-  lucide.createIcons();
+        lucide.createIcons();
     </script>
     <script src="JS/scriptcomisiones.js"></script>
 </body>
