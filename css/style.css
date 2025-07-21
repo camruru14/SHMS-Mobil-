@@ -630,3 +630,45 @@ NAVBAR
 .nav-link svg[class*="lucide-user"] {
     color: #ffffff; /* Asegura que el icono de usuario sea blanco */
 }
+
+/*
+calendario
+*/
+
+.calendar {
+  max-width: 100%;
+}
+
+.calendar-grid,
+.calendar-days {
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-days div {
+  padding: 15px 0;
+  background-color: #f0f4ff;
+  border-radius: 10px;
+  min-height: 60px;
+  position: relative;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.calendar-days div.event-day {
+  background-color: #d1e7dd;
+  font-weight: bold;
+  color: #0f5132;
+}
+
+.calendar-days div small {
+  font-size: 11px;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

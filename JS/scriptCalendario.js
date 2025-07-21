@@ -93,3 +93,44 @@
 
   renderCalendar();
   mostrarSiguienteActividad();
+
+  function agregarEvento(fecha = null) {
+  const fechaEvento = fecha || prompt("Ingrese la fecha del evento (YYYY-MM-DD):");
+  if (!fechaEvento) return;
+
+  const titulo = prompt("¿Qué evento quieres agregar?");
+  if (!titulo) return;
+
+  const hora = prompt("¿A qué hora es el evento? (formato HH:mm)");
+  if (!hora) return;
+
+  eventos.push({ fecha: fechaEvento, titulo, hora });
+  generarCalendario();
+}
+
+function actualizarProximaActividad() {
+  if (eventos.length === 0) {
+    siguienteActividad.classList.add("d-none");
+    return;
+  }
+
+  const ahora = new Date();
+  const proximos = eventos
+    .map(e => ({
+      ...e,
+      fechaCompleta: new Date(`${e.fecha}T${e.hora}:00`)
+    }))
+    .filter(e => e.fechaCompleta > ahora)
+    .sort((a, b) => a.fechaCompleta - b.fechaCompleta);
+
+  if (proximos.length === 0) {
+    siguienteActividad.classList.add("d-none");
+    return;
+  }
+
+  const prox = proximos[0];
+  siguienteActividad.classList.remove("d-none");
+  siguienteActividad.innerHTML = `<strong>Próximo evento:</strong> ${prox.titulo} el ${prox.fecha} a las ${prox.hora}`;
+}
+
+generarCalendario();
