@@ -77,19 +77,20 @@ function Login() {
     );
  
     if (usuarioValido) {
-        // Verificar si es la primera vez que el usuario inicia sesión
-        const firstLoginKey = `firstLogin_${email}`;
-        const isFirstLogin = localStorage.getItem(firstLoginKey) === null;
-        
-        // Redirigir según corresponda
-        if (isFirstLogin) {
-            // Marcar que ya no es primera vez
-            localStorage.setItem(firstLoginKey, 'false');
-            // Redirigir a Comisiones.html (primera vez)
-            window.location.href = "Comisiones.html";
+        // Redirigir directamente al dashboard correspondiente
+        if (usuarioValido.rol === "coordinador") {
+            window.location.href = "DashboardC.html";
         } else {
-            // Redirigir al dashboard correspondiente
-            window.location.href = usuarioValido.dashboard;
+            // Para estudiantes, mantener la lógica de primera vez
+            const firstLoginKey = `firstLogin_${email}`;
+            const isFirstLogin = localStorage.getItem(firstLoginKey) === null;
+            
+            if (isFirstLogin) {
+                localStorage.setItem(firstLoginKey, 'false');
+                window.location.href = "Comisiones.html";
+            } else {
+                window.location.href = usuarioValido.dashboard;
+            }
         }
         
         // Guardar datos del usuario si marcó "Recordarme"
